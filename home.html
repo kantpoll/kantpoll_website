@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=6"/>
+    <meta http-equiv="Content-Security-Policy"
+          content="script-src 'self' ; style-src 'self' 'unsafe-inline' ; child-src 'self'; object-src 'none'; form-action 'self' ;
+          connect-src http: https: data: wss: ws: ; worker-src 'self' ">
+    <meta name="description" content="Transparent, secure and anonymous elections." />
+    <meta name="subject" content="E-voting">
+    <meta name="og:site_name" content="Kantpoll" />
+    <meta name="og:description" content="Transparent, secure and anonymous elections." />
+    <meta name="og:url" content="https://kantpoll.com" />
+    <meta name="theme-color" content="#3f51b5" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/icon32_32.png"/>
+    <link type="text/css" rel="stylesheet" href="google-icons/material-icons.css"/>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/custom.css"/>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>Kantpoll - Home</title>
+</head>
+<body class="white">
+
+<header>
+    <nav id="nav_bar" class="indigo" role="navigation" style="visibility:hidden">
+        <div id="top_bar" class="container">
+            <div class="row">
+                <div id="search_container" class="col s8">
+                    <div class="row">
+                        <div class="col s8">
+                            <input id="search" type="text" class="indigo white-text" placeholder="">
+                        </div>
+                        <div class="col s4">
+                            <a href="#" id="search_link" class="left">
+                                <i id="search_icon" class="material-icons left tooltipped grey-text text-lighten-2"
+                                   data-position="bottom">arrow_forward</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="menus_container" class="col s4">
+                    <a id="advertisement" href="#" hidden>
+                        <i class="material-icons grey-text text-lighten-5">loyalty</i>
+                    </a>
+                    <div class="hide-on-med-and-down">
+                        <a id="menu_desktop"
+                           class="dropdown-button btn right indigo z-depth-0" href="#" data-gutter="-10"
+                           data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">
+                            <i id="menu_icon" class="material-icons right grey-text text-lighten-5">menu</i>
+                        </a>
+                    </div>
+                    <div class="hide-on-large-only">
+                        <a id="menu_mobile" href="#" data-activates="slide_out_mobile">
+                            <i id="menu_icon2" class="material-icons grey-text text-lighten-5 right">settings</i>
+                        </a>
+                    </div>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a id="menu_vault_li"></a></li>
+                        <li><a id="open_vault_link" class="modal-trigger blue-grey-text" href="#modal1"></a></li>
+                        <li><a id="close_vault_link" class="blue-grey-text" href="#"></a></li>
+                        <li id="local_li1" class="divider"></li>
+                        <li id="local_li2"><a id="menu_campaign_li"></a></li>
+                        <li id="create_campaign_li">
+                            <a id="create_campaign_link" class="modal-trigger blue-grey-text" href="#modal6">
+                            </a>
+                        </li>
+                        <li id="last_divider" class="divider"></li>
+                        <li><a id="menu_vote_li"></a></li>
+                        <li><a id="delete_vote_link" class="blue-grey-text modal-trigger" href="#modal9"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <ul id="slide_out1" class="side-nav left fixed" style="visibility:hidden">
+        <li>
+            <nav class="indigo">
+                <a id="logo_container" href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;<img src="imgs/icon_down.png" alt="Kantpoll">
+                    &nbsp;&nbsp;Kantpoll</a>
+            </nav>
+        </li>
+        <li>
+            <div id="user_view" class="user-view">
+                <div id="user_chip" class="white-text chip blue-grey tooltipped" data-position="right">
+                    <i id="user_icon" class="material-icons small">email</i>
+                    <span id="kantpoll_com_side_nav_user" class="text right"></span>
+                </div>
+            </div>
+        </li>
+        <li><a href="#"> <i id="info_icon" class="material-icons blue-grey-text">info</i>
+            <div id="campaign_info_menu_item"></div>
+        </a></li>
+        <li><a href="#"><i id="touch_icon" class="material-icons side-icons blue-grey-text">touch_app</i>
+            <div id="candidates_menu_item"></div>
+        </a></li>
+        <li><a href="#"><i id="balance_icon" class="material-icons side-icons blue-grey-text">account_balance</i>
+            <div id="parties_menu_item"></div>
+        </a></li>
+        <li><a href="#"><i id="people_icon" class="material-icons side-icons blue-grey-text">people</i>
+            <div id="groups_menu_item"></div>
+        </a></li>
+        <li><a href="#"><i id="timeline_icon" class="material-icons side-icons blue-grey-text">timeline</i>
+            <div id="results_menu_item"></div>
+        </a></li>
+        <li><a href="#"><i id="assessment_icon" class="material-icons side-icons blue-grey-text">assessment</i>
+            <div id="statistics_menu_item"></div>
+        </a></li>
+    </ul>
+
+    <ul id="slide_out2" class="side-nav fixed right-aligned" style="visibility:hidden">
+        <li>
+            <nav class="indigo">
+                <a href="#" id="settings_link"><i id="config_icon"
+                                                  class="material-icons side-icons grey-text text-lighten-2 right">settings</i></a>
+            </nav>
+        </li>
+    </ul>
+
+    <ul id="slide_out_mobile" class="side-nav">
+        <li><a id="menu_vault_li_mobile">Vault</a></li>
+        <li id="open_vault_li_mobile"><a id="open_vault_link_mobile" class="modal-trigger blue-grey-text"
+                                         href="#modal1">Open</a></li>
+        <li id="close_vault_li_mobile"><a id="close_vault_link_mobile" class="blue-grey-text" href="#">Close</a></li>
+        <li id="last_divider_mobile" class="divider"></li>
+        <li><a id="menu_vote_li_mobile">Vote</a></li>
+        <li><a id="delete_vote_link_mobile" class="blue-grey-text modal-trigger" href="#modal9">Invalidate</a></li>
+        <li class="divider"></li>
+        <li><a id="settings_link_mobile" class="blue-grey-text" href="#">Settings</a></li>
+    </ul>
+
+    <div id="page_container" class="container">
+        <div id="mobile_div" class="row center-align center" style="visibility:hidden">
+            <div class="col s2 center-align">
+                <a href="#">
+                    <i id="home_mobile_icon" class="material-icons grey-text">home</i>
+                </a>
+            </div>
+            <div class="col s2 center-align">
+                <a href="#">
+                    <i id="campaign_info_mobile_icon" class="material-icons grey-text">info</i>
+                </a>
+            </div>
+            <div class="col s2 center-align">
+                <a href="#">
+                    <i id="candidates_mobile_icon" class="material-icons grey-text">touch_app</i>
+                </a>
+            </div>
+            <div class="col s2 center-align">
+                <a href="#">
+                    <i id="results_mobile_icon" class="material-icons grey-text">timeline</i>
+                </a>
+            </div>
+            <div class="col s2 center-align">
+                <a href="#">
+                    <i id="groups_mobile_icon" class="material-icons grey-text">people</i>
+                </a>
+            </div>
+            <div class="col s2 center-align">
+                <a href="#">
+                    <i id="ads_mobile_icon" class="material-icons grey-text">grade</i>
+                </a>
+            </div>
+        </div>
+        <div id="content_header" class="row">
+            <h5 id="header_title" class="grey-text col s6"></h5>
+            <h5 id="header_info" class="right-align col s6"></h5></div>
+        <div id="content_page">
+            <center>
+                <div id="preloader_mobile" class="preloader-wrapper big active">
+                    <div class="spinner-layer">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+            <img src="imgs/register.png" height="1px" hidden alt="Register "/>
+            <img src="imgs/group.png" height="1px" hidden alt="Group "/>
+            <img src="imgs/vote2.png" height="1px" hidden alt="Vote" />
+        </div>
+    </div>
+</main>
+
+<footer id="page_footer" class="page-footer white" style="visibility:hidden">
+    <div class="container right-align" id="alertKey"></div>
+    <br>
+    <div id="blue_footer" class="footer-copyright indigo">
+        <div id="copyright_container2" class="container">
+            <div id="copyright_container" class="left white-text row">
+                <h6><a href="https://kantpoll.com/login" class="grey-text text-lighten-5" rel="noreferrer" target="_blank">
+                        © 2019 Kantpoll Project
+                    </a>
+                </h6>
+            </div>
+            <div id="vault_icon_container" class="right grey-text text-lighten-5"></div>
+        </div>
+    </div>
+</footer>
+
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h5 class="header blue-grey-text"><i class="small material-icons left">lock_open</i>
+            <span id="modal1_title"></span>
+        </h5>
+        <br>
+        <div class="row flex-s">
+            <div class="file-field input-field col s12 l4">
+                <div class="btn-large waves-effect waves-light orange">
+                    <span id="modal1_file"></span>
+                    <input id="words_file_button" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input id="words_file" class="file-path" type="text"/>
+                </div>
+            </div>
+            <div class="input-field col s12 l3">
+                <input id="kantpoll_com_user1" type="text" autocomplete="on">
+                <label id="modal1_user" for="kantpoll_com_user1"></label>
+            </div>
+            <div class="input-field col s12 l3">
+                <input id="kantpoll_com_password1" type="password">
+                <label id="modal1_password" for="kantpoll_com_password1"></label>
+            </div>
+            <div class="input-field col s12 l2">
+                <a href="#" id="modal1_open"
+                   class="btn-large modal-action modal-close waves-effect waves-light orange right"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal3" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h5 class="header blue-grey-text"><i class="small material-icons left">vpn_key</i>
+            <span id="modal3_title"></span>
+        </h5>
+        <br>
+        <div class="row flex-s">
+            <div class="input-field col s12 l4">
+                <input id="kantpoll_com_user2" type="text" autocomplete="on">
+                <label id="modal3_user" for="kantpoll_com_user2"></label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input id="kantpoll_com_password2" type="password">
+                <label id="modal3_password" for="kantpoll_com_password2"></label>
+            </div>
+            <div class="input-field col s12 l4">
+                <a href="#" id="modal3_ok" class="btn-large waves-effect waves-light orange right"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal6" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h5 class="blue-grey-text" id="create_campaign_title"></h5>
+        <div class="row">
+            <ul id="create_campaign_tabs" class="tabs">
+                <li class="col s1"></li>
+                <li class="tab col s5"><a id="create_campaign_basic_info" class="active" href="#basic_info_tab"></a>
+                </li>
+                <li class="tab col s5"><a id="create_campaign_votation_info" href="#votation_tab"></a></li>
+                <li class="col s1"></li>
+            </ul>
+            <div id="tabs_space"></div>
+            <div id="basic_info_tab" class="col s12">
+                <form class="col s12">
+                    <div class="input-field col s12">
+                        <input id="campaign_name_input" type="text"/>
+                        <label id="campaign_name_label" for="campaign_name_input"></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="campaign_description_input" type="text"/>
+                        <label id="campaign_description_label" for="campaign_name_input"></label>
+                    </div>
+                    <div>
+                        <div class="input-field col s6">
+                            <select id="country_select" class="icons">
+                                <option id="AF_option" data-icon="imgs/flags/af.svg" value="AF">Afghanistan</option>
+                                <option id="AX_option" data-icon="imgs/flags/ax.svg" value="AX">Åland Islands</option>
+                                <option id="AL_option" data-icon="imgs/flags/al.svg" value="AL">Albania</option>
+                                <option id="DZ_option" data-icon="imgs/flags/dz.svg" value="DZ">Algeria</option>
+                                <option id="AS_option" data-icon="imgs/flags/as.svg" value="AS">American Samoa</option>
+                                <option id="AD_option" data-icon="imgs/flags/ad.svg" value="AD">Andorra</option>
+                                <option id="AO_option" data-icon="imgs/flags/ao.svg" value="AO">Angola</option>
+                                <option id="AI_option" data-icon="imgs/flags/ai.svg" value="AI">Anguilla</option>
+                                <option id="AQ_option" data-icon="imgs/flags/aq.svg" value="AQ">Antarctica</option>
+                                <option id="AG_option" data-icon="imgs/flags/ag.svg" value="AG">Antigua and Barbuda
+                                </option>
+                                <option id="AR_option" data-icon="imgs/flags/ar.svg" value="AR">Argentina</option>
+                                <option id="AM_option" data-icon="imgs/flags/am.svg" value="AM">Armenia</option>
+                                <option id="AW_option" data-icon="imgs/flags/aw.svg" value="AW">Aruba</option>
+                                <option id="AU_option" data-icon="imgs/flags/au.svg" value="AU">Australia</option>
+                                <option id="AT_option" data-icon="imgs/flags/at.svg" value="AT">Austria</option>
+                                <option id="AZ_option" data-icon="imgs/flags/az.svg" value="AZ">Azerbaijan</option>
+                                <option id="BS_option" data-icon="imgs/flags/bs.svg" value="BS">Bahamas</option>
+                                <option id="BH_option" data-icon="imgs/flags/bh.svg" value="BH">Bahrain</option>
+                                <option id="BD_option" data-icon="imgs/flags/bd.svg" value="BD">Bangladesh</option>
+                                <option id="BB_option" data-icon="imgs/flags/bb.svg" value="BB">Barbados</option>
+                                <option id="BY_option" data-icon="imgs/flags/by.svg" value="BY">Belarus</option>
+                                <option id="BE_option" data-icon="imgs/flags/be.svg" value="BE">Belgium</option>
+                                <option id="BZ_option" data-icon="imgs/flags/bz.svg" value="BZ">Belize</option>
+                                <option id="BJ_option" data-icon="imgs/flags/bj.svg" value="BJ">Benin</option>
+                                <option id="BM_option" data-icon="imgs/flags/bm.svg" value="BM">Bermuda</option>
+                                <option id="BT_option" data-icon="imgs/flags/bt.svg" value="BT">Bhutan</option>
+                                <option id="BO_option" data-icon="imgs/flags/bo.svg" value="BO">Bolivia, Plurinational
+                                    State of
+                                </option>
+                                <option id="BQ_option" data-icon="imgs/flags/bq.svg" value="BQ">Bonaire, Sint Eustatius
+                                    and Saba
+                                </option>
+                                <option id="BA_option" data-icon="imgs/flags/ba.svg" value="BA">Bosnia and Herzegovina
+                                </option>
+                                <option id="BW_option" data-icon="imgs/flags/bw.svg" value="BW">Botswana</option>
+                                <option id="BV_option" data-icon="imgs/flags/bv.svg" value="BV">Bouvet Island</option>
+                                <option id="BR_option" data-icon="imgs/flags/br.svg" value="BR">Brazil</option>
+                                <option id="IO_option" data-icon="imgs/flags/io.svg" value="IO">British Indian Ocean
+                                    Territory
+                                </option>
+                                <option id="BN_option" data-icon="imgs/flags/bn.svg" value="BN">Brunei Darussalam
+                                </option>
+                                <option id="BG_option" data-icon="imgs/flags/bg.svg" value="BG">Bulgaria</option>
+                                <option id="BF_option" data-icon="imgs/flags/bf.svg" value="BF">Burkina Faso</option>
+                                <option id="BI_option" data-icon="imgs/flags/bi.svg" value="BI">Burundi</option>
+                                <option id="KH_option" data-icon="imgs/flags/kh.svg" value="KH">Cambodia</option>
+                                <option id="CM_option" data-icon="imgs/flags/cm.svg" value="CM">Cameroon</option>
+                                <option id="CA_option" data-icon="imgs/flags/ca.svg" value="CA">Canada</option>
+                                <option id="CV_option" data-icon="imgs/flags/cv.svg" value="CV">Cape Verde</option>
+                                <option id="KY_option" data-icon="imgs/flags/ky.svg" value="KY">Cayman Islands</option>
+                                <option id="CF_option" data-icon="imgs/flags/cf.svg" value="CF">Central African
+                                    Republic
+                                </option>
+                                <option id="TD_option" data-icon="imgs/flags/td.svg" value="TD">Chad</option>
+                                <option id="CL_option" data-icon="imgs/flags/cl.svg" value="CL">Chile</option>
+                                <option id="CN_option" data-icon="imgs/flags/cn.svg" value="CN">China</option>
+                                <option id="CX_option" data-icon="imgs/flags/cx.svg" value="CX">Christmas Island
+                                </option>
+                                <option id="CC_option" data-icon="imgs/flags/cc.svg" value="CC">Cocos (Keeling)
+                                    Islands
+                                </option>
+                                <option id="CO_option" data-icon="imgs/flags/co.svg" value="CO">Colombia</option>
+                                <option id="KM_option" data-icon="imgs/flags/km.svg" value="KM">Comoros</option>
+                                <option id="CG_option" data-icon="imgs/flags/cg.svg" value="CG">Congo</option>
+                                <option id="CD_option" data-icon="imgs/flags/cd.svg" value="CD">Congo, the Democratic
+                                    Republic of the
+                                </option>
+                                <option id="CK_option" data-icon="imgs/flags/ck.svg" value="CK">Cook Islands</option>
+                                <option id="CR_option" data-icon="imgs/flags/cr.svg" value="CR">Costa Rica</option>
+                                <option id="CI_option" data-icon="imgs/flags/ci.svg" value="CI">Côte d'Ivoire</option>
+                                <option id="HR_option" data-icon="imgs/flags/hr.svg" value="HR">Croatia</option>
+                                <option id="CU_option" data-icon="imgs/flags/cu.svg" value="CU">Cuba</option>
+                                <option id="CW_option" data-icon="imgs/flags/cw.svg" value="CW">Curaçao</option>
+                                <option id="CY_option" data-icon="imgs/flags/cy.svg" value="CY">Cyprus</option>
+                                <option id="CZ_option" data-icon="imgs/flags/cz.svg" value="CZ">Czech Republic</option>
+                                <option id="DK_option" data-icon="imgs/flags/dk.svg" value="DK">Denmark</option>
+                                <option id="DJ_option" data-icon="imgs/flags/dj.svg" value="DJ">Djibouti</option>
+                                <option id="DM_option" data-icon="imgs/flags/dm.svg" value="DM">Dominica</option>
+                                <option id="DO_option" data-icon="imgs/flags/do.svg" value="DO">Dominican Republic
+                                </option>
+                                <option id="EC_option" data-icon="imgs/flags/ec.svg" value="EC">Ecuador</option>
+                                <option id="EG_option" data-icon="imgs/flags/eg.svg" value="EG">Egypt</option>
+                                <option id="SV_option" data-icon="imgs/flags/sv.svg" value="SV">El Salvador</option>
+                                <option id="GQ_option" data-icon="imgs/flags/gq.svg" value="GQ">Equatorial Guinea
+                                </option>
+                                <option id="ER_option" data-icon="imgs/flags/er.svg" value="ER">Eritrea</option>
+                                <option id="EE_option" data-icon="imgs/flags/ee.svg" value="EE">Estonia</option>
+                                <option id="ET_option" data-icon="imgs/flags/et.svg" value="ET">Ethiopia</option>
+                                <option id="FK_option" data-icon="imgs/flags/fk.svg" value="FK">Falkland Islands
+                                    (Malvinas)
+                                </option>
+                                <option id="FO_option" data-icon="imgs/flags/fo.svg" value="FO">Faroe Islands</option>
+                                <option id="FJ_option" data-icon="imgs/flags/fj.svg" value="FJ">Fiji</option>
+                                <option id="FI_option" data-icon="imgs/flags/fi.svg" value="FI">Finland</option>
+                                <option id="FR_option" data-icon="imgs/flags/fr.svg" value="FR">France</option>
+                                <option id="GF_option" data-icon="imgs/flags/gf.svg" value="GF">French Guiana</option>
+                                <option id="PF_option" data-icon="imgs/flags/pf.svg" value="PF">French Polynesia
+                                </option>
+                                <option id="TF_option" data-icon="imgs/flags/tf.svg" value="TF">French Southern
+                                    Territories
+                                </option>
+                                <option id="GA_option" data-icon="imgs/flags/ga.svg" value="GA">Gabon</option>
+                                <option id="GM_option" data-icon="imgs/flags/gm.svg" value="GM">Gambia</option>
+                                <option id="GE_option" data-icon="imgs/flags/ge.svg" value="GE">Georgia</option>
+                                <option id="DE_option" data-icon="imgs/flags/de.svg" value="DE">Germany</option>
+                                <option id="GH_option" data-icon="imgs/flags/gh.svg" value="GH">Ghana</option>
+                                <option id="GI_option" data-icon="imgs/flags/gi.svg" value="GI">Gibraltar</option>
+                                <option id="GR_option" data-icon="imgs/flags/gr.svg" value="GR">Greece</option>
+                                <option id="GL_option" data-icon="imgs/flags/gl.svg" value="GL">Greenland</option>
+                                <option id="GD_option" data-icon="imgs/flags/gd.svg" value="GD">Grenada</option>
+                                <option id="GP_option" data-icon="imgs/flags/gp.svg" value="GP">Guadeloupe</option>
+                                <option id="GU_option" data-icon="imgs/flags/gu.svg" value="GU">Guam</option>
+                                <option id="GT_option" data-icon="imgs/flags/gt.svg" value="GT">Guatemala</option>
+                                <option id="GG_option" data-icon="imgs/flags/gg.svg" value="GG">Guernsey</option>
+                                <option id="GN_option" data-icon="imgs/flags/gn.svg" value="GN">Guinea</option>
+                                <option id="GW_option" data-icon="imgs/flags/gw.svg" value="GW">Guinea-Bissau</option>
+                                <option id="GY_option" data-icon="imgs/flags/gy.svg" value="GY">Guyana</option>
+                                <option id="HT_option" data-icon="imgs/flags/ht.svg" value="HT">Haiti</option>
+                                <option id="HM_option" data-icon="imgs/flags/hm.svg" value="HM">Heard Island and
+                                    McDonald Islands
+                                </option>
+                                <option id="VA_option" data-icon="imgs/flags/va.svg" value="VA">Holy See (Vatican City
+                                    State)
+                                </option>
+                                <option id="HN_option" data-icon="imgs/flags/hn.svg" value="HN">Honduras</option>
+                                <option id="HK_option" data-icon="imgs/flags/hk.svg" value="HK">Hong Kong</option>
+                                <option id="HU_option" data-icon="imgs/flags/hu.svg" value="HU">Hungary</option>
+                                <option id="IS_option" data-icon="imgs/flags/is.svg" value="IS">Iceland</option>
+                                <option id="IN_option" data-icon="imgs/flags/in.svg" value="IN">India</option>
+                                <option id="ID_option" data-icon="imgs/flags/id.svg" value="ID">Indonesia</option>
+                                <option id="IR_option" data-icon="imgs/flags/ir.svg" value="IR">Iran, Islamic Republic
+                                    of
+                                </option>
+                                <option id="IQ_option" data-icon="imgs/flags/iq.svg" value="IQ">Iraq</option>
+                                <option id="IE_option" data-icon="imgs/flags/ie.svg" value="IE">Ireland</option>
+                                <option id="IM_option" data-icon="imgs/flags/im.svg" value="IM">Isle of Man</option>
+                                <option id="IL_option" data-icon="imgs/flags/il.svg" value="IL">Israel</option>
+                                <option id="IT_option" data-icon="imgs/flags/it.svg" value="IT">Italy</option>
+                                <option id="JM_option" data-icon="imgs/flags/jm.svg" value="JM">Jamaica</option>
+                                <option id="JP_option" data-icon="imgs/flags/jp.svg" value="JP">Japan</option>
+                                <option id="JE_option" data-icon="imgs/flags/je.svg" value="JE">Jersey</option>
+                                <option id="JO_option" data-icon="imgs/flags/jo.svg" value="JO">Jordan</option>
+                                <option id="KZ_option" data-icon="imgs/flags/kz.svg" value="KZ">Kazakhstan</option>
+                                <option id="KE_option" data-icon="imgs/flags/ke.svg" value="KE">Kenya</option>
+                                <option id="KI_option" data-icon="imgs/flags/ki.svg" value="KI">Kiribati</option>
+                                <option id="KP_option" data-icon="imgs/flags/kp.svg" value="KP">Korea, Democratic
+                                    People's Republic of
+                                </option>
+                                <option id="KR_option" data-icon="imgs/flags/kr.svg" value="KR">Korea, Republic of
+                                </option>
+                                <option id="KW_option" data-icon="imgs/flags/kw.svg" value="KW">Kuwait</option>
+                                <option id="KG_option" data-icon="imgs/flags/kg.svg" value="KG">Kyrgyzstan</option>
+                                <option id="LA_option" data-icon="imgs/flags/la.svg" value="LA">Lao People's Democratic
+                                    Republic
+                                </option>
+                                <option id="LV_option" data-icon="imgs/flags/lv.svg" value="LV">Latvia</option>
+                                <option id="LB_option" data-icon="imgs/flags/lb.svg" value="LB">Lebanon</option>
+                                <option id="LS_option" data-icon="imgs/flags/ls.svg" value="LS">Lesotho</option>
+                                <option id="LR_option" data-icon="imgs/flags/lr.svg" value="LR">Liberia</option>
+                                <option id="LY_option" data-icon="imgs/flags/ly.svg" value="LY">Libya</option>
+                                <option id="LI_option" data-icon="imgs/flags/li.svg" value="LI">Liechtenstein</option>
+                                <option id="LT_option" data-icon="imgs/flags/lt.svg" value="LT">Lithuania</option>
+                                <option id="LU_option" data-icon="imgs/flags/lu.svg" value="LU">Luxembourg</option>
+                                <option id="MO_option" data-icon="imgs/flags/mo.svg" value="MO">Macao</option>
+                                <option id="MK_option" data-icon="imgs/flags/mk.svg" value="MK">Macedonia, the former
+                                    Yugoslav Republic of
+                                </option>
+                                <option id="MG_option" data-icon="imgs/flags/mg.svg" value="MG">Madagascar</option>
+                                <option id="MW_option" data-icon="imgs/flags/mw.svg" value="MW">Malawi</option>
+                                <option id="MY_option" data-icon="imgs/flags/my.svg" value="MY">Malaysia</option>
+                                <option id="MV_option" data-icon="imgs/flags/mv.svg" value="MV">Maldives</option>
+                                <option id="ML_option" data-icon="imgs/flags/ml.svg" value="ML">Mali</option>
+                                <option id="MT_option" data-icon="imgs/flags/mt.svg" value="MT">Malta</option>
+                                <option id="MH_option" data-icon="imgs/flags/mh.svg" value="MH">Marshall Islands
+                                </option>
+                                <option id="MQ_option" data-icon="imgs/flags/mq.svg" value="MQ">Martinique</option>
+                                <option id="MR_option" data-icon="imgs/flags/mr.svg" value="MR">Mauritania</option>
+                                <option id="MU_option" data-icon="imgs/flags/mu.svg" value="MU">Mauritius</option>
+                                <option id="YT_option" data-icon="imgs/flags/yt.svg" value="YT">Mayotte</option>
+                                <option id="MX_option" data-icon="imgs/flags/mx.svg" value="MX">Mexico</option>
+                                <option id="FM_option" data-icon="imgs/flags/fm.svg" value="FM">Micronesia, Federated
+                                    States of
+                                </option>
+                                <option id="MD_option" data-icon="imgs/flags/md.svg" value="MD">Moldova, Republic of
+                                </option>
+                                <option id="MC_option" data-icon="imgs/flags/mc.svg" value="MC">Monaco</option>
+                                <option id="MN_option" data-icon="imgs/flags/mn.svg" value="MN">Mongolia</option>
+                                <option id="ME_option" data-icon="imgs/flags/me.svg" value="ME">Montenegro</option>
+                                <option id="MS_option" data-icon="imgs/flags/ms.svg" value="MS">Montserrat</option>
+                                <option id="MA_option" data-icon="imgs/flags/ma.svg" value="MA">Morocco</option>
+                                <option id="MZ_option" data-icon="imgs/flags/mz.svg" value="MZ">Mozambique</option>
+                                <option id="MM_option" data-icon="imgs/flags/mm.svg" value="MM">Myanmar</option>
+                                <option id="NA_option" data-icon="imgs/flags/na.svg" value="NA">Namibia</option>
+                                <option id="NR_option" data-icon="imgs/flags/nr.svg" value="NR">Nauru</option>
+                                <option id="NP_option" data-icon="imgs/flags/np.svg" value="NP">Nepal</option>
+                                <option id="NL_option" data-icon="imgs/flags/nl.svg" value="NL">Netherlands</option>
+                                <option id="NC_option" data-icon="imgs/flags/nc.svg" value="NC">New Caledonia</option>
+                                <option id="NZ_option" data-icon="imgs/flags/nz.svg" value="NZ">New Zealand</option>
+                                <option id="NI_option" data-icon="imgs/flags/ni.svg" value="NI">Nicaragua</option>
+                                <option id="NE_option" data-icon="imgs/flags/ne.svg" value="NE">Niger</option>
+                                <option id="NG_option" data-icon="imgs/flags/ng.svg" value="NG">Nigeria</option>
+                                <option id="NU_option" data-icon="imgs/flags/nu.svg" value="NU">Niue</option>
+                                <option id="NF_option" data-icon="imgs/flags/nf.svg" value="NF">Norfolk Island</option>
+                                <option id="MP_option" data-icon="imgs/flags/mp.svg" value="MP">Northern Mariana
+                                    Islands
+                                </option>
+                                <option id="NO_option" data-icon="imgs/flags/no.svg" value="NO">Norway</option>
+                                <option id="OM_option" data-icon="imgs/flags/om.svg" value="OM">Oman</option>
+                                <option id="PK_option" data-icon="imgs/flags/pk.svg" value="PK">Pakistan</option>
+                                <option id="PW_option" data-icon="imgs/flags/pw.svg" value="PW">Palau</option>
+                                <option id="PS_option" data-icon="imgs/flags/ps.svg" value="PS">Palestinian Territory
+                                </option>
+                                <option id="PA_option" data-icon="imgs/flags/pa.svg" value="PA">Panama</option>
+                                <option id="PG_option" data-icon="imgs/flags/pg.svg" value="PG">Papua New Guinea
+                                </option>
+                                <option id="PY_option" data-icon="imgs/flags/py.svg" value="PY">Paraguay</option>
+                                <option id="PE_option" data-icon="imgs/flags/pe.svg" value="PE">Peru</option>
+                                <option id="PH_option" data-icon="imgs/flags/ph.svg" value="PH">Philippines</option>
+                                <option id="PN_option" data-icon="imgs/flags/pn.svg" value="PN">Pitcairn</option>
+                                <option id="PL_option" data-icon="imgs/flags/pl.svg" value="PL">Poland</option>
+                                <option id="PT_option" data-icon="imgs/flags/pt.svg" value="PT">Portugal</option>
+                                <option id="PR_option" data-icon="imgs/flags/pr.svg" value="PR">Puerto Rico</option>
+                                <option id="QA_option" data-icon="imgs/flags/qa.svg" value="QA">Qatar</option>
+                                <option id="RE_option" data-icon="imgs/flags/re.svg" value="RE">Réunion</option>
+                                <option id="RO_option" data-icon="imgs/flags/ro.svg" value="RO">Romania</option>
+                                <option id="RU_option" data-icon="imgs/flags/ru.svg" value="RU">Russian Federation
+                                </option>
+                                <option id="RW_option" data-icon="imgs/flags/rw.svg" value="RW">Rwanda</option>
+                                <option id="BL_option" data-icon="imgs/flags/bl.svg" value="BL">Saint Barthélemy
+                                </option>
+                                <option id="SH_option" data-icon="imgs/flags/sh.svg" value="SH">Saint Helena, Ascension
+                                    and Tristan da Cunha
+                                </option>
+                                <option id="KN_option" data-icon="imgs/flags/kn.svg" value="KN">Saint Kitts and Nevis
+                                </option>
+                                <option id="LC_option" data-icon="imgs/flags/lc.svg" value="LC">Saint Lucia</option>
+                                <option id="MF_option" data-icon="imgs/flags/mf.svg" value="MF">Saint Martin (French
+                                    part)
+                                </option>
+                                <option id="PM_option" data-icon="imgs/flags/pm.svg" value="PM">Saint Pierre and
+                                    Miquelon
+                                </option>
+                                <option id="VC_option" data-icon="imgs/flags/vc.svg" value="VC">Saint Vincent and the
+                                    Grenadines
+                                </option>
+                                <option id="WS_option" data-icon="imgs/flags/ws.svg" value="WS">Samoa</option>
+                                <option id="SM_option" data-icon="imgs/flags/sm.svg" value="SM">San Marino</option>
+                                <option id="ST_option" data-icon="imgs/flags/st.svg" value="ST">Sao Tome and Principe
+                                </option>
+                                <option id="SA_option" data-icon="imgs/flags/sa.svg" value="SA">Saudi Arabia</option>
+                                <option id="SN_option" data-icon="imgs/flags/sn.svg" value="SN">Senegal</option>
+                                <option id="RS_option" data-icon="imgs/flags/rs.svg" value="RS">Serbia</option>
+                                <option id="SC_option" data-icon="imgs/flags/sc.svg" value="SC">Seychelles</option>
+                                <option id="SL_option" data-icon="imgs/flags/sl.svg" value="SL">Sierra Leone</option>
+                                <option id="SG_option" data-icon="imgs/flags/sg.svg" value="SG">Singapore</option>
+                                <option id="SX_option" data-icon="imgs/flags/sx.svg" value="SX">Sint Maarten (Dutch
+                                    part)
+                                </option>
+                                <option id="SK_option" data-icon="imgs/flags/sk.svg" value="SK">Slovakia</option>
+                                <option id="SI_option" data-icon="imgs/flags/si.svg" value="SI">Slovenia</option>
+                                <option id="SB_option" data-icon="imgs/flags/sb.svg" value="SB">Solomon Islands</option>
+                                <option id="SO_option" data-icon="imgs/flags/so.svg" value="SO">Somalia</option>
+                                <option id="ZA_option" data-icon="imgs/flags/za.svg" value="ZA">South Africa</option>
+                                <option id="GS_option" data-icon="imgs/flags/gs.svg" value="GS">South Georgia and the
+                                    South Sandwich Islands
+                                </option>
+                                <option id="SS_option" data-icon="imgs/flags/ss.svg" value="SS">South Sudan</option>
+                                <option id="ES_option" data-icon="imgs/flags/es.svg" value="ES">Spain</option>
+                                <option id="LK_option" data-icon="imgs/flags/lk.svg" value="LK">Sri Lanka</option>
+                                <option id="SD_option" data-icon="imgs/flags/sd.svg" value="SD">Sudan</option>
+                                <option id="SR_option" data-icon="imgs/flags/sr.svg" value="SR">Suriname</option>
+                                <option id="SJ_option" data-icon="imgs/flags/sj.svg" value="SJ">Svalbard and Jan Mayen
+                                </option>
+                                <option id="SZ_option" data-icon="imgs/flags/sz.svg" value="SZ">Swaziland</option>
+                                <option id="SE_option" data-icon="imgs/flags/se.svg" value="SE">Sweden</option>
+                                <option id="CH_option" data-icon="imgs/flags/ch.svg" value="CH">Switzerland</option>
+                                <option id="SY_option" data-icon="imgs/flags/sy.svg" value="SY">Syrian Arab Republic
+                                </option>
+                                <option id="TW_option" data-icon="imgs/flags/tw.svg" value="TW">Taiwan, Province of
+                                    China
+                                </option>
+                                <option id="TJ_option" data-icon="imgs/flags/tj.svg" value="TJ">Tajikistan</option>
+                                <option id="TZ_option" data-icon="imgs/flags/tz.svg" value="TZ">Tanzania, United
+                                    Republic of
+                                </option>
+                                <option id="TH_option" data-icon="imgs/flags/th.svg" value="TH">Thailand</option>
+                                <option id="TL_option" data-icon="imgs/flags/tl.svg" value="TL">Timor-Leste</option>
+                                <option id="TG_option" data-icon="imgs/flags/tg.svg" value="TG">Togo</option>
+                                <option id="TK_option" data-icon="imgs/flags/tk.svg" value="TK">Tokelau</option>
+                                <option id="TO_option" data-icon="imgs/flags/to.svg" value="TO">Tonga</option>
+                                <option id="TT_option" data-icon="imgs/flags/tt.svg" value="TT">Trinidad and Tobago
+                                </option>
+                                <option id="TN_option" data-icon="imgs/flags/tn.svg" value="TN">Tunisia</option>
+                                <option id="TR_option" data-icon="imgs/flags/tr.svg" value="TR">Turkey</option>
+                                <option id="TM_option" data-icon="imgs/flags/tm.svg" value="TM">Turkmenistan</option>
+                                <option id="TC_option" data-icon="imgs/flags/tc.svg" value="TC">Turks and Caicos
+                                    Islands
+                                </option>
+                                <option id="TV_option" data-icon="imgs/flags/tv.svg" value="TV">Tuvalu</option>
+                                <option id="UG_option" data-icon="imgs/flags/ug.svg" value="UG">Uganda</option>
+                                <option id="UA_option" data-icon="imgs/flags/ua.svg" value="UA">Ukraine</option>
+                                <option id="AE_option" data-icon="imgs/flags/ae.svg" value="AE">United Arab Emirates
+                                </option>
+                                <option id="GB_option" data-icon="imgs/flags/gb.svg" value="GB">United Kingdom</option>
+                                <option id="US_option" data-icon="imgs/flags/us.svg" value="US">United States</option>
+                                <option id="UM_option" data-icon="imgs/flags/um.svg" value="UM">United States Minor
+                                    Outlying Islands
+                                </option>
+                                <option id="UY_option" data-icon="imgs/flags/uy.svg" value="UY">Uruguay</option>
+                                <option id="UZ_option" data-icon="imgs/flags/uz.svg" value="UZ">Uzbekistan</option>
+                                <option id="VU_option" data-icon="imgs/flags/vu.svg" value="VU">Vanuatu</option>
+                                <option id="VE_option" data-icon="imgs/flags/ve.svg" value="VE">Venezuela, Bolivarian
+                                    Republic of
+                                </option>
+                                <option id="VN_option" data-icon="imgs/flags/vn.svg" value="VN">Viet Nam</option>
+                                <option id="VG_option" data-icon="imgs/flags/vg.svg" value="VG">Virgin Islands,
+                                    British
+                                </option>
+                                <option id="VI_option" data-icon="imgs/flags/vi.svg" value="VI">Virgin Islands, U.S.
+                                </option>
+                                <option id="WF_option" data-icon="imgs/flags/wf.svg" value="WF">Wallis and Futuna
+                                </option>
+                                <option id="EH_option" data-icon="imgs/flags/eh.svg" value="EH">Western Sahara</option>
+                                <option id="YE_option" data-icon="imgs/flags/ye.svg" value="YE">Yemen</option>
+                                <option id="ZM_option" data-icon="imgs/flags/zm.svg" value="ZM">Zambia</option>
+                                <option id="ZW_option" data-icon="imgs/flags/zw.svg" value="ZW">Zimbabwe</option>
+                                <option id="OTH_option" data-icon="imgs/flags/unpo.png" value="OTH">Other</option>
+                                <option id="NOT_option" data-icon="imgs/flags/ana.png" value="NOT">None</option>
+                                <option id="INT_option" data-icon="imgs/flags/int.png" value="INT">Internacional
+                                </option>
+                            </select>
+                            <label id="country_label"></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="image_input" type="url" class="validate">
+                            <label id="image_label" for="image_input"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-field col s3">
+                            <input id="initial_date_input" type="text" class="datepicker">
+                            <label id="initial_date_label" for="initial_date_input"></label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="final_date_input" type="text" class="datepicker">
+                            <label id="final_date_label" for="final_date_input"></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="campaign_external_page_input" type="url" class="validate">
+                            <label id="campaign_external_page_label" for="campaign_external_page_input"></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="votation_tab" class="col s12">
+                <form class="col s12">
+                    <div>
+                        <div class="input-field col s6">
+                            <select id="rounds_select">
+                                <option id="rounds_selected_option" value="" disabled selected>Number of votation
+                                    rounds
+                                </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="maximum_group_size">
+                                <option id="maximum_group_size_label" value="" disabled selected>Maximum group size
+                                </option>
+                                <option value="3">3</option>
+                                <option value="27">27</option>
+                                <option value="81">81</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-field col s6">
+                            <input id="prefix_voters_input" type="text"/>
+                            <label id="prefix_voters_label" for="prefix_voters_input"></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="suffix_voters_input" type="text"/>
+                            <label id="suffix_voters_label" for="suffix_voters_input"></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer right-align">
+        <a href="#" id="cancel_create_campaign_button"
+           class="modal-action modal-close waves-effect waves-green btn-flat light-blue white-text "></a>
+        <a href="#" id="create_campaign_button" class="waves-effect waves-green btn-flat orange white-text "></a>
+    </div>
+</div>
+<div id="modal7" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h5 class="blue-grey-text" id="campaign_admin_title"></h5>
+        <div class="row">
+            <ul id="campaign_admin_tabs" class="tabs">
+                <li class="tab col s3" id="campaign_admin_candidates_li"><a id="campaign_admin_candidates"
+                                                                            href="#admin_candidates_tab"></a></li>
+                <li class="tab col s2" id="campaign_admin_parties_li"><a id="campaign_admin_parties"
+                                                                         href="#admin_parties_tab"></a></li>
+                <li class="tab col s2" id="campaign_admin_ballots_li"><a id="campaign_admin_ballots"
+                                                                         href="#admin_ballots_tab"></a></li>
+                <li class="tab col s2" id="campaign_admin_groups_li"><a id="campaign_admin_groups"
+                                                                        href="#admin_groups_tab"></a></li>
+                <li class="tab col s3" id="campaign_admin_chairpersons_li"><a id="campaign_admin_chairpersons"
+                                                                              class="active"
+                                                                              href="#admin_chairpersons_tab"></a></li>
+            </ul>
+            <div id="tabs_space2">
+                <div id="admin_candidates_tab" class="col s12">
+                    <br>
+                    <h6><b><span id="insert_candidates_title"> </span></b></h6>
+                    <br>
+                    <div class="row">
+                        <textarea id="insert_candidates_textarea"
+                                  placeholder="https://www.yussif.com;Yussif;party0;https://kantpoll.com/imgs/no-image-icon.png&#10;https://www.natasha.com;Natasha;party1;https://kantpoll.com/imgs/no-image-icon.png&#10;https://www.li.com;Li;party2;https://kantpoll.com/imgs/no-image-icon.png"
+                                  class="materialize-textarea"></textarea>
+                        <label id="insert_candidates_label" for="insert_candidates_textarea"></label>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="right"><a href="#" id="insert_candidates_button"
+                                              class="waves-effect waves-green btn-flat grey white-text"></a></div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <input id="disable_candidate_link_checkbox" type="checkbox" class="filled-in">
+                    <label id="disable_candidate_link_label" for="disable_candidate_link_checkbox"> </label>
+                </div>
+                <div id="admin_parties_tab" class="col s12">
+                    <br>
+                    <h6><b><span id="insert_parties_title"> </span></b></h6>
+                    <br>
+                    <div class="row">
+                    <textarea id="insert_parties_textarea"
+                              placeholder="party0;https://kantpoll.com/imgs/no-image-icon.png;https://www.party0.com&#10;party1;https://kantpoll.com/imgs/no-image-icon.png;https://www.party1.com&#10;party2;https://kantpoll.com/imgs/no-image-icon.png;https://www.party2.com"
+                              class="materialize-textarea"></textarea>
+                        <label id="insert_parties_label" for="insert_parties_textarea"></label>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="right"><a href="#" id="insert_parties_button"
+                                              class="waves-effect waves-green btn-flat grey white-text"></a></div>
+                    </div>
+                </div>
+                <div id="admin_ballots_tab" class="col s12">
+                    <br>
+                    <h6><b><span id="create_round_title"> </span></b></h6>
+                    <br>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="create_round_id" type="text">
+                            <label id="create_round_id_label" for="create_round_id"></label>
+                            <a href="#" id="create_round_button"
+                               class="waves-effect waves-green btn-flat grey white-text"></a>
+                        </div>
+                        <div class="col s6">
+                            <input id="can_cancel_checkbox" type="checkbox" class="filled-in">
+                            <label id="can_cancel_label" for="can_cancel_checkbox"> </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <h6 class="col s6"><b><span id="current_ballot_label"></span>:&nbsp;&nbsp;</b>
+                            <mark><span id="current_ballot_mark"></span></mark>&nbsp;-&nbsp;<i><span
+                                    id="current_ballot_status"></span></i></h6>
+                        <h6 class="col s6"><b><span id="cancellations_label"></span></b></h6>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <a href="#" id="close_round_button"
+                               class="waves-effect waves-green btn-flat grey white-text"></a>
+                        </div>
+                        <div class="col s6">
+                            <a href="#" id="show_cancellations_button"
+                               class="btn-flat grey waves-green waves-effect waves-light white-text"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="admin_groups_tab" class="col s12">
+                    <br>
+                    <h6><b><span id="insert_group_categories_title"></span></b></h6>
+                    <br>
+                    <div class="row">
+                        <textarea id="insert_group_categories_textarea"
+                                  placeholder="ME;Men&#10;WO;Women"
+                                  class="materialize-textarea"></textarea>
+                        <label id="insert_group_categories_label" for="insert_group_categories_textarea"></label>
+                    </div>
+                    <div class="row">
+                        <div class="right">
+                            <a href="#" id="insert_group_categories_button"
+                               class="waves-effect waves-green btn-flat grey white-text"></a>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="row">
+                        <h6><b><span id="create_groups_label"></span></b></h6>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="group_categories_select">
+                            </select>
+                            <label id="group_categories_select_label"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="how_many_groups" type="text"/>
+                            <label id="how_many_groups_label" for="how_many_groups"></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="groups_chairperson" type="text"
+                                   placeholder="0x3825db660e1880ff2cb683c27c4cda0493dc1234"/>
+                            <label id="groups_chairperson_label" for="groups_chairperson"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" id="create_groups_button"
+                           class="waves-effect waves-green btn-flat grey white-text right"></a>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="row">
+                        <h6><b><span id="tranfer_finney_label"></span></b></h6>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="transfer_finney_account_value" type="text"/>
+                            <label id="transfer_finney_account_label" for="transfer_finney_account_value"></label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="transfer_finney_amount_value" type="text"/>
+                            <label id="transfer_finney_amount_label" for="transfer_finney_amount_value"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" id="transfer_finney_button"
+                           class="waves-effect waves-green btn-flat grey white-text right"></a>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <h6><b><span id="insert_voters_title"></span></b></h6>
+                    <br>
+                    <div class="row">
+                        <textarea id="insert_voters_textarea"
+                                  placeholder="id1;0x3825db660e1880ff2cb683c27c4cda0493dc1234;03e64ded917cac7c1655e3cb6eec8a32a066d4db6a1575bc76113f1c1a0dae1234&#10;id2;0x3825db660e1880ff2cb683c27c4cda0493dc4321;03e64ded917cac7c1655e3cb6eec8a32a066d4db6a1575bc76113f1c1a0dae4321"
+                                  class="materialize-textarea"></textarea>
+                        <label id="insert_voters_label" for="insert_voters_textarea"></label>
+                    </div>
+                    <div class="row">
+                        <div class="right">
+                            <a href="#" id="insert_voters_button"
+                               class="waves-effect waves-green btn-flat grey white-text"></a>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <h6><b><span id="add_voters_to_groups_title"></span></b></h6>
+                    <br>
+                    <div class="row">
+                        <textarea id="add_voters_to_groups_textarea"
+                                  placeholder="0x3825db660e1880ff2cb683c27c4cda0493dc1234;0;0&#10;0x3825db660e1880ff2cb683c27c4cda0493dc4321;0;1"
+                                  class="materialize-textarea"></textarea>
+                        <label id="add_voters_to_groups_label" for="add_voters_to_groups_textarea"></label>
+                    </div>
+                    <div class="row">
+                        <div class="right">
+                            <a href="#" id="add_voters_to_groups_button"
+                               class="waves-effect waves-green btn-flat grey white-text"></a>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="row">
+                        <h6><b><span id="stop_group_membership_label"></span></b></h6>
+                    </div>
+                    <div class="row">
+                        <a href="#" id="force_stop_button"
+                           class="waves-effect waves-green btn-flat grey white-text"></a>
+                    </div>
+                </div>
+                <div id="admin_chairpersons_tab" class="col s12">
+                    <br>
+                    <h6><b><span id="inform_address_label"> </span></b></h6>
+                    <blockquote><h6><span id="address_to_inform_label"> </span></h6></blockquote>
+                    <h6><b><span id="your_tor_title"> </span></b></h6>
+                    <blockquote><h6><span id="your_tor_label"> </span></h6></blockquote>
+                    <h6><b><span id="your_enode_title"> </span></b></h6>
+                    <blockquote><h6><span id="your_enode_label"> </span></h6></blockquote>
+                    <h6><b><span id="send_votes_label"> </span></b></h6>
+                    <div class="row">
+                        <a href="#" id="send_votes_button"
+                           class="waves-effect waves-green btn-flat grey white-text"></a>
+                    </div>
+                    <h6><b><span id="commit_label"> </span></b></h6>
+                    <div class="row">
+                        <a href="#" id="commit_button" class="waves-effect waves-green btn-flat grey white-text"></a>
+                    </div>
+                    <h6><b><span id="add_tor_label"> </span></b></h6>
+                    <div class="row">
+                        <a href="#" id="add_tor_button" class="waves-effect waves-green btn-flat grey white-text"></a>
+                    </div>
+                    <h6><b><span id="publish_campaign_label"> </span></b></h6>
+                    <div class="row">
+                        <a href="#" id="publish_campaign_button" class="waves-effect waves-green btn-flat grey white-text"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer right-align">
+        <a href="#" id="close_campaign_admin_button"
+           class="modal-action modal-close waves-effect waves-green btn-flat light-blue white-text"></a>
+    </div>
+</div>
+<div id="modal8" class="modal">
+    <div class="modal-content">
+        <input id="share_link_input"/>
+    </div>
+    <div class="modal-footer right-align">
+        <a href="#" id="copy_link_button"
+           class="modal-action waves-effect waves-green btn-flat light-blue white-text">></a>
+    </div>
+</div>
+<div id="modal9" class="modal">
+    <div class="modal-content">
+        <h4 class="header blue-grey-text" id="vote_deletion_title"></h4>
+        <h6 id="vote_deletion_message" class="grey-text"></h6>
+    </div>
+    <div class="modal-footer right-align">
+        <a href="#" id="delete_vote_button"
+           class="modal-action modal-close waves-effect waves-green btn-flat orange white-text"></a>
+        <a href="#" id="close_delete_vote_button"
+           class="modal-action modal-close waves-effect waves-green btn-flat light-blue white-text"></a>
+    </div>
+</div>
+<div id="modal10" class="modal">
+    <div class="modal-content center-align">
+        <h4 class="header blue-grey-text" id="send_captcha_title"></h4>
+        <img id="captcha_img" src="//:0" alt="Captcha"/>
+        <div class="input-field">
+            <input id="captcha_input" type="text" autocomplete="off"/>
+        </div>
+        <br>
+        <a href="#" id="send_captcha_button"
+           class="modal-action waves-effect waves-green btn-flat orange white-text"></a>
+    </div>
+</div>
+<div id="modal11" class="modal">
+    <div class="modal-content">
+        <div id="modal11_text_div">
+            <h5 id="modal11_title" class="red-text text-lighten-2"></h5>
+            <h6 id="modal11_text1" ></h6>
+            <h6 id="modal11_text2" ></h6>
+            <h6 id="modal11_text3" ></h6>
+        </div>
+    </div>
+    <div id="modal11_footer" class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat"><b>OK</b></a>
+    </div>
+</div>
+
+<div id="my_account_page_html2" hidden>
+    <!--[CDATA[
+    <ul id="account_collapsible" class="collapsible" data-collapsible="accordion">
+        <li><div class="collapsible-header"><h6 class="accordion_header valign-wrapper"><i class="material-icons">remove_red_eye</i><span id="watch_profile_container"></span></h6></div>
+            <div class="collapsible-body"><span id="profile_html_container"></span></div></li>
+        <li><div class="collapsible-header"><h6 class="accordion_header valign-wrapper"><i class="material-icons">edit</i><span id="edit_profile_container"></span></h6></div>
+            <div class="collapsible-body"><span></span></div></li>
+        <li><div class="collapsible-header"><h6 class="accordion_header valign-wrapper"><i class="material-icons">account_box</i><span id="my_data_container"></span></h6></div>
+            <div class="collapsible-body"><span></span></div></li>
+        <li><div class="collapsible-header"><h6 class="accordion_header valign-wrapper"><i class="material-icons">dvr</i><span id="network_ids_container"></span></h6></div>
+            <div class="collapsible-body"><span></span></div></li>
+    </ul>
+    -->
+</div>
+<div id="open_campaign_page_html" hidden>
+    <!--[CDATA[
+<div class="col s12 m12">
+    <div class="card vertical">
+      <div class="center">
+        <img id="campaign_card_image" alt="Campaign">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <ul class="collection with-header">
+           <li class="collection-header blue-grey-text"><h6 class="valign-wrapper"><i class="material-icons">description</i>&nbsp;&nbsp;&nbsp; <span id="campaign_basic_info_container"></span></h6></li>
+           <li class="collection-item"><h6><b> <span id="campaign_name_container"></span></b><span id="current_campaign_name_container"></span></h6></li>
+           <li class="collection-item"><h6><b> <span id="campaign_description_container"></span></b><span id="current_campaign_description_container"></span></h6></li>
+           <li class="collection-item"><h6><b> <span id="campaign_country_container"></span></b><span id="current_campaign_country_container"></span></h6></li>
+           <li class="collection-item"><h6><b> <span id="campaign_period_container"></span></b><span id="current_campaign_period_container"></span></h6></li>
+           <li class="collection-item"><h6><b> <span id="external_link_container"></span></b><span id="current_campaign_link_container"></span></h6></li>
+          </ul>
+        </div>
+        <div class="card-action no-pad-top right-align">
+          <a class="teal-text modal-trigger" href="#modal8"><span id="share_link"></span></a>
+        </div>
+      </div>
+    </div>
+    <br/><br/>
+    <ul id="campaign_collapsible" class="collapsible" data-collapsible="accordion">
+       <li><div class="collapsible-header"><h6 class="accordion_header valign-wrapper"><i class="material-icons">settings_applications</i><span id="campaign_technical_info_container"></span></h6></div>
+           <div class="collapsible-body">
+               <ul class="collection">
+                   <li class="collection-item"><h6><b><span id="campaign_id_container"></span></b><span id="current_campaign_id_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="chainid_container"></span></b><span id="current_chainid_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="ipns_address_container"></span></b><span id="current_ipns_address_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="ethereum_address_container"></span></b><span id="current_ethereum_address_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="contract_address_container"></span></b><span id="current_contract_address_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="certificate_authority_container"></span></b><span id="current_certificate_authority_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="rounds_container"></span></b><span id="current_rounds_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="onion_container"></span></b><span id="current_onion_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="regexp_container"></span></b><span id="current_regexp_container"></span></h6></li>
+                   <li class="collection-item"><h6><b><span id="mgz_container"></span></b><span id="current_mgz_container"></span></h6></li>
+               </ul>
+           </div>
+       </li>
+    </ul>
+</div>
+    -->
+</div>
+<div id="ballot_id_header_html" hidden>
+    <!--[CDATA[
+    <a href="#" id="disabled_round_button" class="btn-flat grey-text [[color]] lighten-5 tooltipped" data-position="bottom" data-tooltip="[[data-tooltip]]"><span>[[id]]</span></a>
+    -->
+</div>
+<div id="voter_group_header_html" hidden>
+    <!--[CDATA[
+    <a href="#" id="disabled_group_button" class="btn-flat grey-text amber lighten-5 tooltipped" data-position="bottom" data-tooltip="[[data-tooltip]]"><span>[[category]]</span></a>
+    -->
+</div>
+<div id="enter_campaign_button_html1" hidden>
+    <!--[CDATA[
+    <a href="#" id="disabled_enter1_button" class="btn-flat grey-text cyan lighten-5"><span id="enter_campaign_container"></span></a>
+    -->
+</div>
+<div id="enter_campaign_button_html2" hidden>
+    <!--[CDATA[
+    <a href="#" id="disabled_enter2_button" class="btn-flat grey-text light-green lighten-5"><span id="entered_container"></span></a>
+    -->
+</div>
+<div id="enter_campaign_button_html3" hidden>
+    <!--[CDATA[
+    <a href="#" id="participate_button" class="btn-flat grey-text red lighten-5"><span id="participate_container"></span></a>
+    -->
+</div>
+<div id="campaign_admin_button_html" hidden>
+    <!--[CDATA[
+    <a id="campaign_admin_button" href="#modal7" class="modal-trigger btn-flat grey-text orange lighten-5"><span id="campaign_admin_container"></span></a>&nbsp;&nbsp;
+    -->
+</div>
+<div id="collaborate_button_html" hidden>
+    <!--[CDATA[
+    <a id="collaborate_button" href="#modal7" class="modal-trigger btn-flat grey-text orange lighten-5"><span id="collaborate_container"></span></a>&nbsp;&nbsp;
+    -->
+</div>
+<div id="preloader_html" hidden>
+    <!--[CDATA[
+    <div class="center-align">
+        <h5 id="preloader_title" class="grey-text"></h5>
+        <div class="progress"><div class="indeterminate blue"></div></div>
+    </div>
+    -->
+</div>
+<div id="preloader_title_android_html" hidden>
+    <!--[CDATA[
+    <center><h5 class="blue-grey-text">[text]</h5></center>
+    -->
+</div>
+<div id="preloader_android_html" hidden>
+    <!--[CDATA[
+    <center>
+    <div id="preloader_android" class="preloader-wrapper big active">
+    <div class="spinner-layer">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+    </div>
+    </center>
+    -->
+</div>
+<div id="floating_button_html" hidden>
+    <!--[CDATA[
+    <a id="floating_button_link" href="#modal3" class="btn btn-floating pulse amber darken-1 tooltipped modal-trigger" data-position="top" data-tooltip="[[data-tooltip]]" ><i class="material-icons">vpn_key</i></a>
+    -->
+</div>
+<div id="floating_button_html_no_tooltip" hidden>
+    <!--[CDATA[
+    <a id="floating_button_link" href="#modal3" class="btn btn-floating pulse amber darken-1 modal-trigger" data-position="top" ><i class="material-icons">vpn_key</i></a>
+    -->
+</div>
+<div id="vault_icon_container_html1" class="white-text" hidden>
+    <!--[CDATA[
+    <span id="tooltip_span" hidden>[[data-tooltip]]</span>
+    <i class="material-icons">lock_outline</i>
+    -->
+</div>
+<div id="vault_icon_container_html2" class="white-text" hidden>
+    <!--[CDATA[
+    <span id="tooltip_span" hidden>[[data-tooltip]]</span>
+    <i class="material-icons">lock_open</i>
+    -->
+</div>
+<div id="vault_icon_container_html3" class="white-text" hidden>
+    <!--[CDATA[
+    <span id="tooltip_span" hidden>[[data-tooltip]]</span>
+    <i class="material-icons">lock</i>
+    -->
+</div>
+<div id="candidates_page_html" hidden>
+    <!--[CDATA[
+    <table class="highlight centered">
+        <thead id="candidates_thead" class="white blue-grey-text">
+            <tr>
+                <th class="column_photo">
+                    <i><h6 id="candidate_photo_th"></h6></i>
+                </th>
+                <th class="column_name">
+                    <i><h6 id="candidate_name_th"></h6></i>
+                </th>
+                <th class="column_party">
+                    <i><h6 id="candidate_party_th"></h6></i>
+                </th>
+                <th class="column_results">
+                    <i><h6 id="vote_donate_th"></h6></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="candidates_tbody"></tbody>
+    </table>
+    -->
+</div>
+<div id="results_page_html" hidden>
+    <!--[CDATA[
+    <table class="highlight centered">
+        <thead id="candidates_thead" class="white blue-grey-text">
+            <tr>
+                <th class="column_photo">
+                    <i><h6 id="candidate_photo_th"></h6></i>
+                </th>
+                <th class="column_name">
+                    <i><h6 id="candidate_name_th"></h6></i>
+                </th>
+                <th class="column_party">
+                    <i><h6 id="candidate_party_th"></h6></i>
+                </th>
+                <th class="column_results">
+                    <i><h6 id="votes_th"></h6></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="candidates_tbody"></tbody>
+    </table>
+    -->
+</div>
+<div id="parties_page_html" hidden>
+    <!--[CDATA[
+    <table id="parties_table" class="highlight centered">
+        <thead id="parties_thead" class="white blue-grey-text">
+            <tr>
+                <th class="column_photo">
+                    <i><h6 id="party_photo_th"></h6></i>
+                </th>
+                <th class="column_party_name">
+                    <i><h6 id="party_name_th"></h6></i>
+                </th>
+                <th class="column_party_url">
+                    <i><h6 id="party_url_th"></h6></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="parties_tbody"></tbody>
+    </table>
+    -->
+</div>
+<div id="group_categories_page_html" hidden>
+    <!--[CDATA[
+    <table class="highlight centered">
+        <thead id="group_categories_thead" class="white blue-grey-text">
+            <tr>
+                <th class="column_category_id">
+                    <i><h6 id="group_category_id_th"></h6></i>
+                </th>
+                <th class="column_category_description">
+                    <i><h6 id="group_category_description_th"></h6></i>
+                </th>
+                <th class="column_enter_group">
+                    <i><h6 id="enter_group_th"></h6></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="group_categories_tbody"></tbody>
+    </table>
+    -->
+</div>
+<div id="candidates_page_items_html" hidden>
+    <!--[CDATA[
+    <tr>
+        <td>
+            <a href="[[candidate_page_href]]" rel="noreferrer" target="_blank"><img class="candidates_page_items_img" src="[[photo]]" alt="Candidate"></a>
+        </td>
+        <td>
+            <h6>[[name]]</6>
+        </td>
+        <td>
+            <h6>[[party]]</h6>
+        </td>
+        <td id="[[vote_button_th]]">
+            <a href="#" id="[[vote_button_id]]" class="red lighten-2 white-text btn-flat">[[vote_button_text]]</a>&nbsp;&nbsp;
+        </td>
+    </tr>
+    -->
+</div>
+<div id="results_page_items_html" hidden>
+    <!--[CDATA[
+    <tr>
+        <td>
+            <a href="[[candidate_page_href]]" rel="noreferrer" target="_blank"><img class="candidates_page_items_img" src="[[photo]]" alt="Candidate"></a>
+        </td>
+        <td>
+            <h6>[[name]]</6>
+        </td>
+        <td>
+            <h6>[[party]]</h6>
+        </td>
+        <td>
+            <h6>[[votes]]</h6>
+        </td>
+    </tr>
+    -->
+</div>
+<div id="parties_page_items_html" hidden>
+    <!--[CDATA[
+    <tr>
+        <td>
+            <img class="parties_page_items_img" src="[[photo]]" alt="Party" />
+        </td>
+        <td>
+            <h6>[[name]]</6>
+        </td>
+        <td>
+            <h6>[[url]]</h6>
+        </td>
+    </tr>
+    -->
+</div>
+<div id="group_categories_page_items_html" hidden>
+    <!--[CDATA[
+    <tr>
+        <td>
+            <h6>[[id]]</6>
+        </td>
+        <td>
+            <h6>[[content]]</6>
+        </td>
+        <td>
+            <a href="#" id="[[group_button_id]]" class="btn-flat red lighten-2 white-text ">[[group_button_text]]</a>&nbsp;&nbsp;
+        </td>
+    </tr>
+    -->
+</div>
+<div id="cant_open_candidates_page_html" hidden>
+    <!--[CDATA[
+        <h6 class="blue-grey-text cant_open_label" >[[text]]</h6>
+    -->
+</div>
+<div id="group_categories_select_item_html" hidden>
+    <!--[CDATA[
+    <option value="[[id_value]]">[[id_text]]</option>
+    -->
+</div>
+<div id="statistics_page_html" hidden>
+    <!--[CDATA[
+    <div class="row center">
+        <img id="data_image" src="imgs/data-visualization.jpg" alt="Statistics">
+    </div>
+    <div id="statistics_text" class="row center blue-grey-text">
+        <h6>[[text]]</h6>
+    </div>
+    <div class="row center">
+        <div class="col m1 xl2"></div>
+        <div id="statistics_buttons_div" class="flex-s center col s12 m10 xl8">
+            <button id="export_xlsx_button" class="btn-large spinner-green waves-effect waves-light" type="submit">
+                [[export_to_xlsx]]
+                <i class="material-icons right">send</i>
+            </button>
+            &nbsp;
+            <button id="export_ods_button" class="btn-large spinner-green waves-effect waves-light" type="submit">
+                [[export_to_ods]]
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        <div class="col m1 xl2"></div>
+    </div>
+    -->
+</div>
+<div id="settings_page_html" hidden>
+    <!--[CDATA[
+    <div id="observers_onions_div" class="row">
+        <div class="col m1 l2 hide-on-small-only"></div>
+        <div class="input-field col s12 m10 l8">
+            <input id="observers_onions_settings_input" type="text" value="[[observers_onions]]" placeholder="abcdefghijklmnop.onion-0x69923f8eb0a82d7907894cfdccad418a2b9bb4a84fd60cf5d98d905a33d22123,abc..."/>
+            <label id="observers_onions_settings_label" for="observers_onions_settings_input"></label>
+        </div>
+        <div class="col m1 l2 hide-on-small-only"></div>
+    </div>
+    <div id="tor2web_div" class="row" hidden>
+        <div class="col m1 l2 hide-on-small-only"></div>
+        <div class="input-field col s12 m10 l8">
+            <input id="tor2web_settings_input" type="text" value="[[tor2web]]" placeholder=".onion.to" />
+            <label id="tor2web_settings_label" for="tor2web_settings_input"></label>
+        </div>
+        <div class="col m1 l2 hide-on-small-only"></div>
+    </div>
+    <div id="enode_port_settings_div" class="row" hidden>
+        <div class="col m1 l2 hide-on-small-only"></div>
+        <div id="enode_port_div" class="input-field col s12 m10 l8" class="tooltiped" data-tooltip="[[enode_port_tip]]">
+            <input id="enode_port_settings_input" type="text" value="[[enode_port]]" />
+            <label id="enode_port_settings_label" for="enode_port_settings_input"></label>
+        </div>
+        <div class="col m1 l2 hide-on-small-only"></div>
+    </div>
+    <div class="row">
+        <div class="col m1 l2 hide-on-small-only"></div>
+        <div class="col s12 m10 l8">
+            <a href="#" id="update_settings_button" class="modal-action modal-close btn-flat white-text waves-effect waves-light orange right"></a>
+        </div>
+        <div class="col m1 l2 hide-on-small-only"></div>
+    </div>
+    -->
+</div>
+<div id="user_view_background_url" hidden>
+    <!--[CDATA[url('../imgs/user_view_background.jpg')-->
+</div>
+<div id="no_image_icon_url" hidden>
+    <!--[CDATA[imgs/no-image-icon.png-->
+</div>
+<div id="start_page_html" hidden>
+    <!--[CDATA[
+    <div class="hide-on-med-and-down"><br></div>
+    <div id="explanatory_images_div" class="row flex-xs">
+        <div class="col s12 m4 center-align">
+            <img src="imgs/register.png" height="140px" max-width="80%" alt="Register" />
+            <br>
+            <h5 id="start_page_join" class="grey-text"></h5>
+        </div>
+        <div class="col s12 m4 center-align">
+            <img src="imgs/group.png" height="140px" max-width="80%" alt="Group" />
+            <br>
+            <h5 id="start_page_choose" class="grey-text"></h5>
+        </div>
+        <div class="col s12 m4 center-align">
+            <img src="imgs/vote2.png" height="140px" max-width="80%" alt="Vote" />
+            <br>
+            <h5 id="start_page_vote" class="grey-text"></h5>
+        </div>
+    </div>
+    <br><br>
+    <div id="tutorials_div" class="brown lighten-5">
+        <br><br>
+        <h5 id="tutorials" class="center grey-text text-darken-2 flow-text"></h5>
+        <br><br>
+        <div class="row flex-xs">
+            <div class="col s12 m6 center-align">
+                <a href="https://kantpoll.com/tutorial1" target="_blank" id="for_voters_button" class="btn white-text waves-effect waves-light blue-grey"></a>
+            </div>
+            <div class="col s12 hide-on-med-and-up"><br></div>
+            <div class="col s12 m6 center-align">
+                <a href="https://kantpoll.com/tutorial2" target="_blank" id="for_creators_button" class="btn white-text waves-effect waves-light blue-grey"></a>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    -->
+</div>
+<div id="sent_icon_html" hidden>
+    <!--[CDATA[
+    <i class="material-icons center grey-text text-darken-2">check</i>
+    -->
+</div>
+<div id="error_icon_html" hidden>
+    <!--[CDATA[
+    <i class="material-icons center yellow-text text-darken-2">error</i>
+    -->
+</div>
+<div id="voted_icon_html" hidden>
+    <!--[CDATA[
+    <img width="22px" src="imgs/double-tick-grey.png" alt="Voted">
+    -->
+</div>
+<div id="confirmed_icon_html" hidden>
+    <!--[CDATA[
+    <img width="22px" src="imgs/double-tick-blue.png" alt="Confirmed">
+    -->
+</div>
+<div id="results_div_html" hidden>
+    <!--[CDATA[
+    <div id="results_div" class="collection"></div>
+    -->
+</div>
+<div id="results_item_html" hidden>
+    <!--[CDATA[
+    <a href="[url]" rel="noreferrer" class="collection-item avatar">
+      <img src="[image]" alt="Result" class="circle">
+      <h5 class="blue-grey-text results_item_name">[name]</h5>
+      <span class="grey-text text-darken-2 results_item_description">[description]<br></span>
+      <p class="secondary-content grey-text text-lighten-1 right-align"><span class="hide-on-med-and-down">[period]<br></span><span class="hide-on-small-only">[country]</span></p>
+    </a>
+    -->
+</div>
+<div id="stopping_accession_html" hidden>
+    <!--[CDATA[
+    <div class="center">
+        <div class="chip cyan lighten-4">
+            [message]
+            <i class="close material-icons">close</i>
+        </div>
+    </div>
+    <br>
+    -->
+</div>
+<div id="unregistered_vault_chip_html" hidden>
+    <!--[CDATA[
+    <div class="center">
+        <div class="chip amber lighten-3">
+            [message]
+            <i class="close material-icons">close</i>
+        </div>
+    </div>
+    <br>
+    -->
+</div>
+<div id="promo_html" hidden>
+    <!--[CDATA[
+    <div class="center">
+        <a id="promo_link" href="[[promo_link]]" rel="noreferrer" target="_blank">
+            <img id="promo_img" src="[[promo_img]]" alt="Promo">
+        </a>
+    </div>
+    -->
+</div>
+<div id="loader_style_css" hidden>
+    <!--[CDATA[<style>.loader{border: 16px solid #f3f3f3;border-radius: 50%;border-top: 16px solid #3498db;width: 100px;height: 100px;-webkit-animation: spin 1.5s linear infinite;animation: spin 1.5s linear infinite;}@-webkit-keyframes spin {0% { -webkit-transform: rotate(0deg);}100%{-webkit-transform: rotate(360deg);}}@keyframes spin {0%{ transform: rotate(0deg);}100%{transform: rotate(360deg);}}</style>--></div>
+
+<div id="statistics_div" hidden></div>
+<div id="cancellations_div" hidden></div>
+
+<script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="materialize/js/bin/materialize.min.js"></script>
+<script type="text/javascript" src="lang/lang.js"></script>
+<script type="text/javascript" src="lang/countries.js"></script>
+<script type="text/javascript" src="web3-js/web3.min.js"></script>
+<script type="text/javascript" src="buffer/buffer.js"></script>
+<script type="text/javascript" src="ethers-js/ethers.min.js"></script>
+<script type="text/javascript" src="secure-ls/secure-ls.min.js"></script>
+<script type="text/javascript" src="js-sha3/sha3.min.js"></script>
+<script type="text/javascript" src="js-sha256/sha256.min.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="bip39/sjcl-bip39.js"></script>
+<script type="text/javascript" src="bip39/jsbip39.js"></script>
+<script type="text/javascript" src="bip39/wordlist_english.js"></script>
+<script type="text/javascript" src="xlsx/shim.min.js"></script>
+<script type="text/javascript" src="xlsx/xlsx.core.min.js"></script>
+</body>
+</html>

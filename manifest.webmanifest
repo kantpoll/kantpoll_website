@@ -1,0 +1,36 @@
+{
+  "short_name": "Kantpoll",
+  "name": "Kantpoll e-voting web app",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "imgs/icon48_48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "imgs/icon72_72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "imgs/icon128_128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "imgs/icon512_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "home",
+  "theme_color": "#3f51b5",
+  "display": "minimal-ui",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.kantpoll.android",
+      "id": "com.kantpoll.android"
+    }]
+}

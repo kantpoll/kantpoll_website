@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <meta http-equiv="Content-Security-Policy"
+          content="script-src 'self' ; style-src 'self' 'unsafe-inline' ; child-src 'none'; object-src 'none' ; connect-src http: https: data: wss: ws: ; worker-src 'self'">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/icon32_32.png"/>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+    <title>Account Kit</title>
+</head>
+<body>
+<form method="get" action="https://www.accountkit.com/v1.0/basic/dialog/sms_login/" hidden>
+    <input type="hidden" name="app_id" value="359955688143899">
+    <input type="hidden" name="redirect" value="https://certificate.kantpoll.com/getCertificate">
+    <input id="sms_token" type="hidden" name="state" value="">
+    <input id="p_number" type="hidden" name="phone_number" value=""/>
+    <input id="c_code" type="hidden" name="country_code" value=""/>
+    <input type="hidden" name="fbAppEventsEnabled" value=true>
+    <button id="sms_button" type="submit">SMS</button>
+</form>
+<form method="get" action="https://www.accountkit.com/v1.0/basic/dialog/email_login/" hidden>
+    <input type="hidden" name="app_id" value="359955688143899">
+    <input type="hidden" name="redirect" value="https://certificate.kantpoll.com/getCertificate">
+    <input id="email_token" type="hidden" name="state" value="">
+    <input id="e_mail" type="hidden" name="email" value=""/>
+    <input type="hidden" name="fbAppEventsEnabled" value=true>
+    <button id="email_button" type="submit">EMAIL</button>
+</form>
+<br>&nbsp;
+<center>
+    <div id="chip_div" hidden>
+        <div class="chip"><b id="msg_span"></b></div>
+    </div>
+    <br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+    <div id="preloader_div" hidden>
+        <div class="preloader-wrapper big active" hidden>
+            <div class="spinner-layer spinner-yellow-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+<script type="text/javascript" src="lang/lang.js"></script>
+<script type="text/javascript" src="js/accountkit.js"></script>
+</body>
+</html>
