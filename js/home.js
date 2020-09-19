@@ -3139,6 +3139,9 @@ function sendPreRequest(url, callback){
  * @returns (string)
  */
 function getCertificateAuthority(){
+    if (!secureStorage.get("my_certificate")){
+        return ""
+    }
     let certificate = JSON.parse(secureStorage.get("my_certificate"));
     return certificate.issuer_address
 }
